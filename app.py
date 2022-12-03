@@ -21,7 +21,7 @@ def upload_file():
         fig_html, fig_list_html = data(img)
 
         return render_template('result.html', plot=fig_html, plot2=fig_list_html)
-    return render_template('index.html')
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=int(os.environ.get('PORT', 5000)))
