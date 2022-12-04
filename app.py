@@ -20,9 +20,9 @@ def upload_file():
         file = request.files.get('file')
         # img = Image.open(file)  # load with Pillow
 
-        fig_html, fig_list_html = data(file)
+        pred_label, class_names, fig_html, fig_list_html = data(file)
 
-        return render_template('result.html', plot=fig_html, plot2=fig_list_html)
+        return render_template('result.html', plotname=pred_label, plot=fig_html, plot_list=fig_list_html)
     return render_template('home.html')
 
 if __name__ == '__main__':

@@ -17,36 +17,52 @@
       }
     </style>
     <link rel="stylesheet" href="/static/style.css">
-    <title>Data Driven Service Design And AI Application</title>
+    <title>Find your emotion</title>
   </head>
   <body class="text-center">
-    <!-- <p><img src="C:\Users\ijy\emotion_image\smile.gif"></p> -->
-    <h1 class="h1-title h3 font-weight-bold">Image Emotion Detection to Heatmap</p>
-    <img class="mb-4" src="/static/smile.gif" alt="" width="72">
-    <form class="h3 form-signin" method=post enctype=multipart/form-data>
-        <h1 class="h3 mb-3 font-weight-normal text-center">Upload any image</h1>
-        <input type="file" name="file" class="form-control-file" id="inputfile">
-        <br/>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
-    </form>
-    <p class="mt-4 mb-2 text-muted">SangEun Lee & JiYeon Im</p>
+    <div style="width:100%; height:100%"> 
+      <div style="width:100%;"> 
+          <div style="float:left; width:60%; height:20%; margin:5%; margin-right:20%; margin-left:20%; margin-bottom:0%;">
+              <div style="width:100%; height:10%; margin-bottom:0%;"></div> 
+              <div style="text-align:center; width:100%; font-family: 'Georgia'; color: rgb(41, 40, 40); font-size: 50px; font-weight: 1000; margin-bottom:0%;">
+                  Find your emotion
+              </div>
+          </div>   
+        </div>  
+      <form class="form-signin" method=post enctype=multipart/form-data>
+          <div class="h3 filebox font-weight-normal">
+            <input class="upload-name" value="Attached" placeholder="Attached">
+            <label for="inputfile">Select file</label>
+            <input type="file" name="file" id="inputfile" accept=".jpg, .jpeg, .png" style="display:none"/>
+            <br/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
+          </div>
+      </form>
+      <p class="mt-4 mb-2 text-muted" style="font-size:14px;"><i>SangEun Lee & JiYeon Im</i></p>
+    </div>
     <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
       $('#inputfile').bind('change', function() {
+          var fileName = $("#inputfile").val();
+          $(".upload-name").val(fileName);
+
           let fileSize = this.files[0].size/1024/1024; // this gives in MB
+
           if (fileSize > 1) {
             $("#inputfile").val(null);
             alert('file is too big. images more than 1MB are not allowed')
             return
           }
+
           let ext = $('#inputfile').val().split('.').pop().toLowerCase();
+
           if($.inArray(ext, ['jpg','jpeg, png']) == -1) {
             $("#inputfile").val(null);
             alert('only jpeg/jpg files are allowed!');
           }
       });
-    </script> -->
+    </script>
   </body>
 </html>

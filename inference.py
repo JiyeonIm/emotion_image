@@ -9,7 +9,9 @@ import torchvision
 from torchvision import datasets, models, transforms
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt, mpld3
 import time
 import torch.nn.functional as F
 import os
@@ -170,7 +172,7 @@ def data(img):
     plt.text(10, 25, 'Predicted label : %s'%pred_label, color= 'white', weight='bold', size=12) 
     plt.xticks([])              # set no ticks on x-axis
     plt.yticks([])              # set no ticks on y-axis
-    fig_html = mpld3.fig_to_html(fig)
+    fig_html = mpld3.fig_to_html(fig, no_extras=True, figid='fig')
     # plt.savefig('./test2.png')  ## !!!! image output path
     plt.close(fig)
 
@@ -183,7 +185,8 @@ def data(img):
         plt.imshow(class_map[i])
         plt.text(10, 35, '%s'%class_names[i], color= 'white', weight='bold', size=12)
         plt.text(10, 75, '%.2f'%output_prob[i], color= 'white', weight='bold', size=12) 
-    fig_list_html = mpld3.fig_to_html(fig_list)
+    fig_list_html = mpld3.fig_to_html(fig_list, no_extras=True, figid='fig-list')
     # plt.savefig('./test.png')  ## !!!! image output path
+    plt.close(fig_list)
 
-    return fig_html, fig_list_html
+    return pred_label, class_names, fig_html, fig_list_html
