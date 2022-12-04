@@ -180,7 +180,6 @@ def initialize_model(model_name, num_classes, num_maps, feature_extract, use_pre
         pooling2 = nn.Sequential()
         pooling2.add_module('class_wise', ClassWisePool2(num_classes))
         model_ft = ResNetWSL(model_ft, num_classes, num_maps, pooling, pooling2)
-        
         input_size = 448
 
     else:
