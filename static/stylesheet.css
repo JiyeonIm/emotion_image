@@ -421,7 +421,7 @@ button {
 }
 
 .bottomdiv {
-  position: absolute;
+  position: fixed;
   width: 99%;
   margin: 0px 0px 0px 0px;
   /* right: 8px; */
