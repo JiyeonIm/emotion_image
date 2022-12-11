@@ -6,6 +6,6 @@ Pillow==9.3.0
 torch==1.9.1
 torchvision==0.10.1
 tqdm==4.57.0 
-opencv_python==4.4.0 
+opencv-python==4.4.0 
 torch==1.4.0
 torchvision==0.5.0 
